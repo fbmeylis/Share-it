@@ -28,10 +28,10 @@ public class FeedRecycleAdapter extends RecyclerView.Adapter<FeedRecycleAdapter.
 
     }
 
-    public void addItems(String comment, String downloadurl, String usermail) {
-        this.commentList.add(comment);
-        this.urllist.add(downloadurl);
-        this.usermailList.add(usermail);
+    public void addItem(FeedItem item) {
+        this.commentList.add(item.getComment());
+        this.urllist.add(item.getDownloadurl());
+        this.usermailList.add(item.getUsermail());
         notifyDataSetChanged();
     }
 

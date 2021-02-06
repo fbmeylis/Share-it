@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.Build;
@@ -34,6 +35,8 @@ import com.google.firebase.storage.UploadTask;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
@@ -156,9 +159,12 @@ public class UploadActivity extends AppCompatActivity {
            imageuri = data.getData();
            try {
                if (Build.VERSION.SDK_INT >= 28){
+                   ByteArrayOutputStream out = new ByteArrayOutputStream();
                    ImageDecoder.Source source = ImageDecoder.createSource(this.getContentResolver(),imageuri);
                    selectedImage = ImageDecoder.decodeBitmap(source);
-                   imageView.setImageBitmap(selectedImage);
+                   selectedImage.compress(Bitmap.CompressFormat.JPEG, 30, out);
+                   Bitmap decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+                   imageView.setImageBitmap(decoded);
                }else{
                selectedImage = MediaStore.Images.Media.getBitmap(this.getContentResolver(),imageuri);
                imageView.setImageBitmap(selectedImage);}

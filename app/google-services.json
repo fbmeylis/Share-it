@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "396815950224",
+    "project_id": "shareit-13b5d",
+    "storage_bucket": "shareit-13b5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396815950224:android:4dc2c05029e1b947861315",
+        "android_client_info": {
+          "package_name": "com.fbmeylis.shareit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396815950224-hauuem0f2r844adkiksogsoes4u2dhtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr3jpyOXSJuLep1InZl2spZ5NYwvbCgbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396815950224-hauuem0f2r844adkiksogsoes4u2dhtf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
